@@ -81,7 +81,7 @@ linters-settings:
     sections:
       - standard # Standard section: captures all standard packages.
       - default # Default section: contains all imports that could not be matched to another section type.
-      - prefix(github.com/s-things) # Custom section: groups all imports with the specified Prefix.
+      - prefix(github.com/gammazero) # Custom section: groups all imports with the specified Prefix.
     # Skip generated files.
     # Default: true
     #skip-generated: false

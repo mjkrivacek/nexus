@@ -7,8 +7,9 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/gammazero/nexus/v3/wamp"
 	"github.com/stretchr/testify/require"
+
+	"github.com/gammazero/nexus/v3/wamp"
 )
 
 var dataItem = []map[string]interface{}{{

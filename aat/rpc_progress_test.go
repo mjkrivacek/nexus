@@ -6,9 +6,10 @@ import (
 	"testing"
 	"time"
 
+	"github.com/stretchr/testify/require"
+
 	"github.com/gammazero/nexus/v3/client"
 	"github.com/gammazero/nexus/v3/wamp"
-	"github.com/stretchr/testify/require"
 )
 
 const (
@@ -384,7 +385,7 @@ func TestRPCProgressiveCallTimeout(t *testing.T) {
 	require.Error(t, err, "expected error from CallProgress")
 	var rpce client.RPCError
 	require.ErrorAs(t, err, &rpce, "error should be RPCError type")
-	require.Equal(t, wamp.ErrCanceled, rpce.Err.Error)
+	require.Equal(t, wamp.ErrTimeout, rpce.Err.Error)
 	close(releaseCallee)
 
 	select {

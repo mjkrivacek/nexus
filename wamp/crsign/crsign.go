@@ -8,8 +8,9 @@ import (
 	"encoding/base64"
 	"hash"
 
-	"github.com/gammazero/nexus/v3/wamp"
 	"golang.org/x/crypto/pbkdf2"
+
+	"github.com/gammazero/nexus/v3/wamp"
 )
 
 // SignChallenge computes the HMAC-SHA256, using the given key, over the

@@ -12,13 +12,14 @@ import (
 	"testing"
 	"time"
 
+	"github.com/stretchr/testify/require"
+	"go.uber.org/goleak"
+
 	"github.com/gammazero/nexus/v3/router"
 	"github.com/gammazero/nexus/v3/router/auth"
 	"github.com/gammazero/nexus/v3/stdlog"
 	"github.com/gammazero/nexus/v3/wamp"
 	"github.com/gammazero/nexus/v3/wamp/crsign"
-	"github.com/stretchr/testify/require"
-	"go.uber.org/goleak"
 )
 
 const (
@@ -904,7 +905,7 @@ func TestTimeoutRemoteProcedureCall(t *testing.T) {
 	case err = <-errChan:
 		var rpcError RPCError
 		require.ErrorAs(t, err, &rpcError)
-		require.Equal(t, wamp.ErrCanceled, rpcError.Err.Error)
+		require.Equal(t, wamp.ErrTimeout, rpcError.Err.Error)
 	case <-time.After(2 * time.Second):
 		require.FailNow(t, "call should have been canceled")
 	}

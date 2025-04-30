@@ -11,11 +11,12 @@ import (
 	"testing"
 	"time"
 
+	"github.com/stretchr/testify/require"
+	"golang.org/x/crypto/pbkdf2"
+
 	"github.com/gammazero/nexus/v3/client"
 	"github.com/gammazero/nexus/v3/wamp"
 	"github.com/gammazero/nexus/v3/wamp/crsign"
-	"github.com/stretchr/testify/require"
-	"golang.org/x/crypto/pbkdf2"
 )
 
 const (

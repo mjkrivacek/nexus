@@ -5,8 +5,9 @@ import (
 	"errors"
 	"reflect"
 
-	"github.com/gammazero/nexus/v3/wamp"
 	"github.com/ugorji/go/codec"
+
+	"github.com/gammazero/nexus/v3/wamp"
 )
 
 var jh *codec.JsonHandle
